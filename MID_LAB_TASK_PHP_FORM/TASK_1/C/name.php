@@ -10,26 +10,18 @@
 	<form method="get" action="#">
 		<fieldset>
 			<legend>NAME</legend>
-			<table>
-				<tr>
-					<td>USERNAME</td>
-					<td>
-						<input type="text" name="myname" value="<?php
-																if (isset($_REQUEST['submit'])) {
-																	$name = $_REQUEST['myname'];
-																	if ($name == "") {
-																		echo "null value...";
-																	} else {
-																		echo $name;
-																	}
-																}
-																?>">
-					</td>
-					<td>
-						<input type="submit" name="submit" value="Submit">
-					</td>
-				</tr>
-			</table>
+			<input type="text" name="myname" value="<?php
+													if (isset($_REQUEST['submit'])) {
+														$name = $_REQUEST['myname'];
+														if ($name == "") {
+															echo "null value...";
+														} else {
+															echo $name;
+														}
+													}
+													?>">
+			<hr>
+			<input type="submit" name="submit" value="Submit">
 		</fieldset>
 	</form>
 </body>
