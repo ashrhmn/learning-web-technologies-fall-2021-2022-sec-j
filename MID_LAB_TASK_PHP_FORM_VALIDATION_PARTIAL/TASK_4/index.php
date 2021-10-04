@@ -1,14 +1,3 @@
-<?php
-if (isset($_REQUEST['submit'])) {
-    $gender = $_REQUEST['gender'];
-    if ($gender != "") {
-        echo $gender . ' is selected';
-    } else {
-        echo 'Invalid Input';
-    }
-}
-?>
-
 <html>
 
 <head>
@@ -25,6 +14,17 @@ if (isset($_REQUEST['submit'])) {
         </fieldset>
         <br />
         <input type="submit" name="submit" value="Submit">
+        <p>
+            <?php
+            if (isset($_REQUEST['submit'])) {
+                if (isset(($_REQUEST['gender']))) {
+                    echo  $_REQUEST['gender'] . ' is selected';
+                } else {
+                    echo 'At least one of them must be selected';
+                }
+            }
+            ?>
+        </p>
     </form>
 </body>
 
