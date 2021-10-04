@@ -20,8 +20,10 @@
 				function hasTwoWord($name)
 				{
 					for ($i = 0; $i < strlen($name); ++$i) {
-						if ($i != strlen($name) - 1 && $name[$i] == " ") {
-							return true;
+						if ($i != strlen($name) - 1 && $name[$i] == " " && $i != 0) {
+							if ($name[strlen($name) - 1] != ' ') {
+								return true;
+							}
 						}
 					}
 					return false;
@@ -32,7 +34,7 @@
 					for ($i = 0; $i < strlen($name); ++$i) {
 						$c = ord(strtolower($name)[$i]);
 						if ($c < 97 || $c > 122) {
-							if ($c != 46 && $c != 45 && $c!=32) {
+							if ($c != 46 && $c != 45 && $c != 32) {
 								return false;
 							}
 						}
