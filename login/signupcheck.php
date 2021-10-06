@@ -5,9 +5,6 @@
 		if($_POST['username'] != ""){
 			if($_POST['password'] != ""){
 				if($_POST['email'] != ""){
-
-					//$_SESSION['username'] 	= $_POST['username'];
-					//$_SESSION['password'] 	= $_POST['password'];
 					$users = $_SESSION['users'];
 					if(!$users){
 						$users = array();
@@ -17,8 +14,6 @@
 					array_push($users,$user);
 					
 					$_SESSION['users'] = $users;
-					// $_SESSION['user'] = $user;
-					//print_r($_SESSION);
 					header('location: login.html');
 				}else{
 					echo "Invalid email...";

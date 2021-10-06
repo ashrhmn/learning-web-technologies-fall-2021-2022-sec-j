@@ -30,12 +30,6 @@ if (isset($_POST['submit'])) {
 			} else {
 				echo "invalid username/password";
 			}
-			// if($_SESSION['user']['username'] == $username && $_SESSION['user']['password'] == $password){
-			// 	$_SESSION['flag'] = "true";
-			// 	header('location: home.php');
-			// }else{
-			// 	echo "invalid username/password";
-			// }
 		} else {
 			echo "Invalid password...";
 		}
