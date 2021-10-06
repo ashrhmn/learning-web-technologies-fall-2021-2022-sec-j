@@ -8,11 +8,8 @@ function isCredCorrect($username, $password)
 
 	for ($i = 0; $i < $numOfUsers; ++$i) {
 		if ($users[$i]['username'] == $username && $users[$i]['password'] == $password) {
-			echo 'here';
 			return true;
 		}
-		echo 'there';
-		echo $users[$i].'    '.$username.'   '.$password;
 	}
 	return false;
 }
