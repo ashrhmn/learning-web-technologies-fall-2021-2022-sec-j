@@ -9,7 +9,7 @@
 
 <body>
     <?php
-    require('./nav.html')
+    require('./nav.php')
     ?>
     Home HTML
     X Company
