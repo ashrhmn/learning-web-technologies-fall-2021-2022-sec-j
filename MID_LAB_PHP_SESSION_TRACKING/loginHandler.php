@@ -3,6 +3,9 @@ session_start();
 
 function isCredCorrect($username, $password)
 {
+    if (!isset($_COOKIE['users'])) {
+        return false;
+    }
     $users = json_decode($_COOKIE['users'], true);
     $numOfUsers = count($users);
 
