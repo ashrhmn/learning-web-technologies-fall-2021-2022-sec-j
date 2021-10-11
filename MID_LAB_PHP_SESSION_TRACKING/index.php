@@ -11,8 +11,8 @@
     <?php
     require('./nav.php')
     ?>
-    Home HTML
-    X Company
+    
+    <h1>Welcome to xCompany</h1>
 </body>
 
 </html>

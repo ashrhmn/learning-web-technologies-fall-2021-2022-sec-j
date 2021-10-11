@@ -10,20 +10,46 @@ if (isset($_COOKIE['isLoggedIn'])) {
         <html>
 
         <body>
-            <?php
-            require('./nav.php')
-            ?>
-            <form method="POST" action="loginHandler.php">
-                <h1>Login to cont</h1>
-                <input type="text" name="username" placeholder="Username">
-                <input type="password" name="password" placeholder="Password">
-                <input type="submit" name="submit" value="Login">
-            </form>
-            <button><a href="signup.php">Sign Up</a></button>
+            <table border="1" align="center" width="70%">
+                <tr>
+                    <td>
+                        <?php
+                        require('./nav.php')
+                        ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+
+                        <fieldset>
+                            <legend>LOGIN</legend>
+                            <form method="POST" action="loginHandler.php">
+                                <table align="center">
+                                    <tr>
+                                        <td>Username</td>
+                                        <td>
+                                            : <input type="text" name="username">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Password</td>
+                                        <td>
+                                            : <input type="password" name="password">
+                                        </td>
+                                    </tr>
+                                </table>
+                                <input type="checkbox" name="rememberMe" id="">
+                                <label for="rememberMe">Remember Me</label><br>
+                                <input type="submit" name="submit" value="Login">
+                                <a href="forgotPassword.php">Forgot Password?</a>
+                            </form>
+                        </fieldset>
+                    </td>
+                </tr>
+                <?php require('footer.html') ?>
+            </table>
         </body>
-
         </html>
-
 <?php
 
     }

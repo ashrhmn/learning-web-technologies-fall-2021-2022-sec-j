@@ -3,16 +3,17 @@
 <body>
     <table width="100%">
         <tr>
-            <td>Logo</td>
+            <td align="left"><a href="index.php">Logo</a></td>
             <td align="right">
-
-                <a href="index.php">Home</a>
                 <?php
                 if (isset($_COOKIE['isLoggedIn'])) {
                     if ($_COOKIE['isLoggedIn'] == 'true') {
                 ?>
-                        <a href="dashboard.php">Dashboard</a>
                         <form action="logoutHandler.php" method="POST">
+                            <p>
+                                Logged in as
+                                <a href="dashboard.php"><?php echo $_COOKIE['authUser'] ?></a>
+                            </p>
                             <input type="submit" name="logout" value="Logout">
                         </form>
                     <?php

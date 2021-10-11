@@ -9,7 +9,7 @@ if (isset($_COOKIE['isLoggedIn'])) {
         <html>
 
         <body>
-            <table border="1" width="100%" height="100%">
+            <table border="1" width="50%" align="center" height="100%">
                 <tr>
                     <td height="20%">
 
