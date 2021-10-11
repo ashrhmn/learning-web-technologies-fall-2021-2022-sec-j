@@ -7,8 +7,11 @@ if (isset($_POST['submit'])) {
         if ($_POST['password'] != "") {
             if ($_POST['email'] != "") {
 
+                $users = [];
                 if (!isset($_COOKIE['users'])) {
-                    setcookie('users', json_encode(array()), time() + 3600, '/');
+                    setcookie('users', json_encode($users), time() + 3600, '/');
+                } else {
+                    $users = json_decode($_COOKIE['users'], true);
                 }
 
                 $name = '';
@@ -17,7 +20,6 @@ if (isset($_POST['submit'])) {
                     $name = $_POST['name'];
                 }
 
-                $users = json_decode($_COOKIE['users']);
 
                 print_r($users);
 

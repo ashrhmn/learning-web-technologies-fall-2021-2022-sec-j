@@ -10,7 +10,7 @@ if (isset($_COOKIE['isLoggedIn'])) {
 
         <body>
             <?php
-            require('./nav.html')
+            require('./nav.php')
             ?>
             <form method="POST" action="signUpHandler.php">
                 <h1>Sign Up</h1>
@@ -30,6 +30,6 @@ if (isset($_COOKIE['isLoggedIn'])) {
     }
 } else {
     setcookie('isLoggedIn', 'false', time() + 999999, '/');
-    header('location: home.php');
+    header('location: index.php');
 }
 ?>

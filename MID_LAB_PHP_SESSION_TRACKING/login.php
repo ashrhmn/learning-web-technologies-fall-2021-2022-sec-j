@@ -11,9 +11,9 @@ if (isset($_COOKIE['isLoggedIn'])) {
 
         <body>
             <?php
-            require('./nav.html')
+            require('./nav.php')
             ?>
-            <form action="POST">
+            <form method="POST" action="loginHandler.php">
                 <h1>Login to cont</h1>
                 <input type="text" name="username" placeholder="Username">
                 <input type="text" name="password" placeholder="Password">
@@ -29,6 +29,6 @@ if (isset($_COOKIE['isLoggedIn'])) {
     }
 } else {
     setcookie('isLoggedIn', 'false', time() + 999999, '/');
-    header('location: home.php');
+    header('location: index.php');
 }
 ?>

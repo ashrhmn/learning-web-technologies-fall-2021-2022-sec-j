@@ -11,7 +11,7 @@ if(isset($_COOKIE['isLoggedIn'])){
     </head>
     <body>
     <?php
-    require('./nav.html')
+    require('./nav.php')
     ?>
         <h1>Dashboard of user</h1>
     </body>
@@ -26,6 +26,6 @@ if(isset($_COOKIE['isLoggedIn'])){
 } 
 else{ 
     setcookie('isLoggedIn','false', time()+999999,'/'); 
-    header('location: home.php'); 
+    header('location: index.php'); 
 }
 ?>
