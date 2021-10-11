@@ -50,13 +50,13 @@ if (isset($_COOKIE['isLoggedIn'])) {
                             require('DashboardViews/dashboard.php');
                         }
                         if (isset($_REQUEST['profile'])) {
-                            echo 'Profile';
+                            require('DashboardViews/profile.php');
                         }
                         if (isset($_REQUEST['edit'])) {
-                            echo 'Edit';
+                            require('DashboardViews/editProfile.php');
                         }
                         if (isset($_REQUEST['changeProPic'])) {
-                            echo 'Change Pro Pic';
+                            require('DashboardViews/changeProfilePic.php');
                         }
                         if (isset($_REQUEST['changePassword'])) {
                             require('DashboardViews/changePassword.php');
