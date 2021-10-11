@@ -19,8 +19,55 @@ if (isset($_COOKIE['isLoggedIn'])) {
                     </td>
                 </tr>
                 <tr>
-                    <td>Account</td>
-                    <td>Details</td>
+                    <td>
+                        <form method="GET" action="#">
+                            <ul>
+                                <li>
+                                    <input type="submit" name="dashboard" value="Dashboard">
+                                </li>
+                                <li>
+                                    <input type="submit" name="profile" value="Profile">
+                                </li>
+                                <li>
+                                    <input type="submit" name="edit" value="Edit Profile">
+                                </li>
+                                <li>
+                                    <input type="submit" name="changeProPic" value="Change Profile Picture">
+                                </li>
+                                <li>
+                                    <input type="submit" name="changePassword" value="Change Password">
+                                </li>
+                                <li>
+                                    <input type="submit" name="logout" value="Logout">
+                                </li>
+                            </ul>
+
+                        </form>
+                    </td>
+                    <td align="center">
+                        <?php
+                        if (isset($_REQUEST['dashboard'])) {
+                            require('DashboardViews/dashboard.php');
+                        }
+                        if (isset($_REQUEST['profile'])) {
+                            echo 'Profile';
+                        }
+                        if (isset($_REQUEST['edit'])) {
+                            echo 'Edit';
+                        }
+                        if (isset($_REQUEST['changeProPic'])) {
+                            echo 'Change Pro Pic';
+                        }
+                        if (isset($_REQUEST['changePassword'])) {
+                            require('DashboardViews/changePassword.php');
+                        }
+                        if (isset($_REQUEST['logout'])) {
+                            setcookie('isLoggedIn', 'false', time() + 3600, '/');
+                            setcookie('authUser', 'null', time() - 10, '/');
+                            header('location: login.php');
+                        }
+                        ?>
+                    </td>
                 </tr>
                 <tr>
                     <td height="10%" align="center" colspan="2">
