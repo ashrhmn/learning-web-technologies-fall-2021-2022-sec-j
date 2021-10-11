@@ -28,7 +28,9 @@ if (isset($_POST['submit'])) {
                         'username' => $_POST['username'],
                         'password' => $_POST['password'],
                         'email' => $_POST['email'],
-                        'name' => $_POST['name']
+                        'name' => $_POST['name'],
+                        'gender' => $_POST['gender'],
+                        'dateOfBirth' => $_POST['day'] . '-' . $_POST['month'] . '-' . $_POST['year']
                     ];
 
                     array_push($users, $user);

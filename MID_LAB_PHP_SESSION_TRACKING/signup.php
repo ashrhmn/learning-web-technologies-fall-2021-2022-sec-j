@@ -68,7 +68,7 @@ if (isset($_COOKIE['isLoggedIn'])) {
                                 </table>
                                 <fieldset>
                                     <legend>Gender</legend>
-                                    <input type="radio" name="gender" id="">Male
+                                    <input type="radio" name="gender" id="" checked>Male
                                     <input type="radio" name="gender" id="">Female
                                     <input type="radio" name="gender" id="">Other
                                 </fieldset>
@@ -82,20 +82,20 @@ if (isset($_COOKIE['isLoggedIn'])) {
                                         </tr>
                                         <tr>
                                             <td>
-                                                <input value="1" type="number" min="1" max="31" step="1" size="2" type="text"> /
+                                                <input name="day" value="1" type="number" min="1" max="31" step="1" size="2" type="text"> /
                                             </td>
                                             <td>
-                                                <input value="1" type="number" min="1" max="12" step="1" size="2" type="text"> /
+                                                <input name="month" value="1" type="number" min="1" max="12" step="1" size="2" type="text"> /
                                             </td>
                                             <td>
-                                                <input value="2000" type="number" min="1960" max="2021" step="1" size="4" type="text">
+                                                <input name="year" value="2000" type="number" min="1960" max="2021" step="1" size="4" type="text">
                                             </td>
                                         </tr>
                                     </table>
                                 </fieldset>
                                 <hr />
                                 <input type="submit" name="submit" Value="Sign Up">
-                                <button><a href="login.php">Login</a></button>
+                                <!-- <button><a href="login.php">Login</a></button> -->
                             </form>
                         </fieldset>
                     </td>
