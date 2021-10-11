@@ -21,11 +21,14 @@ if (isset($_POST['submit'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
+
+    $timeout = isset($_POST['rememberMe']) ? 9999999 : 3600;
+
     if ($username != "") {
         if ($password != "") {
             if (isCredCorrect($username, $password)) {
-                setcookie('authUser', $username, time() + 3600, '/');
-                setcookie('isLoggedIn', 'true', time() + 3600, '/');
+                setcookie('authUser', $username, time() + $timeout, '/');
+                setcookie('isLoggedIn', 'true', time() + $timeout, '/');
                 header('location: dashboard.php');
             } else {
                 echo "invalid username/password";
