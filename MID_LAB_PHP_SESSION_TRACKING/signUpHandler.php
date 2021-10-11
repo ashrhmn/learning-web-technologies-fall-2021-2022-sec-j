@@ -6,7 +6,7 @@ if (isset($_POST['submit'])) {
     if ($_POST['username'] != "") {
         if ($_POST['password'] != "") {
             if ($_POST['email'] != "") {
-                if ($_POST['password'] == "confirmPassword") {
+                if ($_POST['password'] == $_POST["confirmPassword"]) {
 
                     $users = [];
                     if (!isset($_COOKIE['users'])) {

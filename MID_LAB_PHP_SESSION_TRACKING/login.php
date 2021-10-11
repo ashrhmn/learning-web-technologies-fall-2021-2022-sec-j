@@ -16,7 +16,7 @@ if (isset($_COOKIE['isLoggedIn'])) {
             <form method="POST" action="loginHandler.php">
                 <h1>Login to cont</h1>
                 <input type="text" name="username" placeholder="Username">
-                <input type="text" name="password" placeholder="Password">
+                <input type="password" name="password" placeholder="Password">
                 <input type="submit" name="submit" value="Login">
             </form>
             <button><a href="signup.php">Sign Up</a></button>
