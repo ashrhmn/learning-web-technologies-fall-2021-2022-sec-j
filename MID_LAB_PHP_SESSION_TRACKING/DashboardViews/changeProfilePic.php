@@ -1,1 +1,2 @@
-<h3>Change Profile Pic</h3>
+<input type="file" name="profilePic" id="">
+<input type="submit" name="submit" value="Submit">
