@@ -68,9 +68,9 @@ if (isset($_COOKIE['isLoggedIn'])) {
                                 </table>
                                 <fieldset>
                                     <legend>Gender</legend>
-                                    <input type="radio" name="gender" id="" checked>Male
-                                    <input type="radio" name="gender" id="">Female
-                                    <input type="radio" name="gender" id="">Other
+                                    <input type="radio" name="gender" value="Male" checked>Male
+                                    <input type="radio" name="gender" value="Female">Female
+                                    <input type="radio" name="gender" value="Other">Other
                                 </fieldset>
                                 <fieldset>
                                     <legend>Date Of Birth</legend>

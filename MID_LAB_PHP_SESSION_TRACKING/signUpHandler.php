@@ -28,7 +28,7 @@ if (isset($_POST['submit'])) {
                         'username' => $_POST['username'],
                         'password' => $_POST['password'],
                         'email' => $_POST['email'],
-                        'name' => $_POST['name'],
+                        'name' => $name,
                         'gender' => $_POST['gender'],
                         'dateOfBirth' => $_POST['day'] . '-' . $_POST['month'] . '-' . $_POST['year']
                     ];
