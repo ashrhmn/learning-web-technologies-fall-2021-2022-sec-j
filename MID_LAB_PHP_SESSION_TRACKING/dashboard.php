@@ -10,6 +10,9 @@ if(isset($_COOKIE['isLoggedIn'])){
         <title>Dashboard</title>
     </head>
     <body>
+    <?php
+    require('./nav.html')
+    ?>
         <h1>Dashboard of user</h1>
     </body>
 </html>

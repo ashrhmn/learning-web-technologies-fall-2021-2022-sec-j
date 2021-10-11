@@ -8,9 +8,9 @@
 </head>
 
 <body>
-    <a href="dashboard.php">Dashboard</a>
-    <a href="login.php">Login</a>
-    <a href="signup.php">Signup</a>
+    <?php
+    require('./nav.html')
+    ?>
     Home HTML
     X Company
 </body>

@@ -10,7 +10,9 @@ if (isset($_COOKIE['isLoggedIn'])) {
         <html>
 
         <body>
-
+            <?php
+            require('./nav.html')
+            ?>
             <form action="POST">
                 <h1>Sign Up</h1>
                 <input type="text" name="name" placeholder="Name">
