@@ -65,26 +65,43 @@ if (isset($_COOKIE['isLoggedIn'])) {
                                             : <input type="password" name="confirmPassword">
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td align="center">
-                                            <input type="submit" name="submit" Value="Sign Up">
-                                        </td>
-                                        <td align="center">
-                                            <button><a href="login.php">Login</a></button>
-                                        </td>
-                                    </tr>
                                 </table>
+                                <fieldset>
+                                    <legend>Gender</legend>
+                                    <input type="radio" name="gender" id="">Male
+                                    <input type="radio" name="gender" id="">Female
+                                    <input type="radio" name="gender" id="">Other
+                                </fieldset>
+                                <fieldset>
+                                    <legend>Date Of Birth</legend>
+                                    <table>
+                                        <tr>
+                                            <td align="center">dd</td>
+                                            <td align="center">mm</td>
+                                            <td align="center">yyyy</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <input value="1" type="number" min="1" max="31" step="1" size="2" type="text"> /
+                                            </td>
+                                            <td>
+                                                <input value="1" type="number" min="1" max="12" step="1" size="2" type="text"> /
+                                            </td>
+                                            <td>
+                                                <input value="2000" type="number" min="1960" max="2021" step="1" size="4" type="text">
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </fieldset>
+                                <hr />
+                                <input type="submit" name="submit" Value="Sign Up">
+                                <button><a href="login.php">Login</a></button>
                             </form>
                         </fieldset>
                     </td>
                 </tr>
-                <tr>
-                    <td height="10%">
-                        <h4>
-                            Copyright 2017
-                        </h4>
-                    </td>
-                </tr>
+
+                <?php require('footer.html') ?>
             </table>
         </body>
 
