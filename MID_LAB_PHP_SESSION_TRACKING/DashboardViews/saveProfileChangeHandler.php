@@ -13,11 +13,8 @@ if (isset($_POST['submit'])) {
 
     $users = json_decode($_COOKIE['users'], true);
     $username = $_COOKIE['authUser'];
-    // $user = array();
     for ($i = 0; $i < count($users); ++$i) {
         if ($users[$i]['username'] == $username) {
-            // $user = $users[$i];
-
             $users[$i]['username'] = $username;
             $users[$i]['name'] = $name;
             $users[$i]['email'] = $email;

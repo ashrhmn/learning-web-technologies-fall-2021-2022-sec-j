@@ -1,7 +1,7 @@
 <form action="handleResetPassword.php" method="post">
 
     <label for="email">Email : </label>
-    <input type="text" name="email">
+    <input type="email" name="email">
 
     <label for="birthYear">Year Of Birth : </label>
     <input type="text" name="birthYear">

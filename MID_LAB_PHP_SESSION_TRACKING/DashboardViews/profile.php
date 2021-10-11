@@ -33,7 +33,7 @@ for ($i = 0; $i < count($users); ++$i) {
             <label for="email">Email : </label>
         </td>
         <td>
-            <input type="text" name="email" value=<?php echo $user['email'] ?>>
+            <input type="email" name="email" value=<?php echo $user['email'] ?>>
         </td>
     </tr>
     <tr>
