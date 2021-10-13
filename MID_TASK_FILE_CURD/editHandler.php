@@ -19,14 +19,19 @@ if (isset($_POST['submit'])) {
                     if ($data != "") {
                         if (++$counter == $id) {
                             fwrite($myfile, $_POST['username'] . "|" . $_POST['password'] . "|" . $_POST['email']);
-                            // echo $_POST['username'] . "|" . $_POST['password'] . "|" . $_POST['email'];
                         } else {
                             $user = explode('|', $data);
-                            fwrite($myfile, $user[0] . '|' . $user[1] . '|' . $user[2]);
-                            // echo $user[0] . '|' . $user[1] . '|' . $user[2];
+                            fwrite($myfile, trim($user[0]) . '|' . trim($user[1]) . '|' . trim($user[2]));
                         }
+                        fwrite($myfile, "\n");
                     }
                 }
+
+                fclose($myfile);
+                fclose($mybacfile);
+                $mybacfile = fopen("userBac.txt", "w");
+                fwrite($mybacfile, "");
+                fclose($mybacfile);
 
                 header('location: userlist.php');
             } else {

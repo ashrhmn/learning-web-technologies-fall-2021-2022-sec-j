@@ -1,6 +1,6 @@
 <?php
 $id = $_GET['id'];
-if (rename('user.txt', 'userBac.txt') != 1) {
+if (copy('user.txt', 'userBac.txt') != 1) {
 	echo 'Error backing up';
 	return;
 }
@@ -11,11 +11,8 @@ $counter = 0;
 while (!feof($myBacfile)) {
 	$data = fgets($myBacfile);
 	if ($data != "") {
-		$user = explode('|', $data);
-
 		if (++$counter != $id) {
-			$userData = $user[0] . '|' . $user[1] . '|' . $user[2];
-			fwrite($myfile, $userData);
+			fwrite($myfile, $data);
 		}
 	}
 }
@@ -24,7 +21,7 @@ header('location: userlist.php');
 
 fclose($myfile);
 fclose($myBacfile);
-$myBacfile = fopen('userBac.txt','w');
-fwrite($myBacfile,"");
+$myBacfile = fopen('userBac.txt', 'w');
+fwrite($myBacfile, "");
 fclose($myBacfile);
 ?>
