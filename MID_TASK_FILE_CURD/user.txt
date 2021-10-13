@@ -1,3 +1,2 @@
-XYZ|12|aaalamin9@gmail.com 
-A|12|amin.se.aiub@gmail.com
-XYZ|123|aaalamin9@gmail.com
+ash|ash|ash@ash.com
+nila|nila|1@1.1
