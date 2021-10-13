@@ -12,6 +12,8 @@
 					fwrite($myfile, $user);
 					fclose($myfile);
 
+					echo $user;
+
 					header('location: login.html');
 				}else{
 					echo "Invalid email...";

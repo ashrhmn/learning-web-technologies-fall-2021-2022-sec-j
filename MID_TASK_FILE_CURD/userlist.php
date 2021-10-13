@@ -29,23 +29,22 @@
 
 		while (!feof($myfile)) {
 			$data = fgets($myfile);
-			$user = explode('|', $data);
-			if (trim($user[0]) == $username && trim($user[1]) == $password) {
-				// setcookie('flag', 'true', time() + 3600, '/');
-				// header('location: home.php');
+			if($data!=""){
+				$user = explode('|', $data);
+	
+				echo '<tr>
+					<td>' . ++$counter . '</td>
+					<td>' . $user[0] . '</td>
+					<td>' . $user[1] . '</td>
+					<td>' . $user[2] . '</td>
+					<td>
+						<a href="edit.php?id='.$counter.'"> EDIT</a> |
+						<a href="delete.php?id='.$counter.'"> DELETE</a>
+					</td>
+				</tr>';
 			}
-
-			echo '<tr>
-				<td>' . ++$counter . '</td>
-				<td>' . $user[0] . '</td>
-				<td>' . $user[1] . '</td>
-				<td>' . $user[2] . '</td>
-				<td>
-					<a href="edit.php?id='.$counter.'"> EDIT</a> |
-					<a href="delete.php?id='.$counter.'"> DELETE</a>
-				</td>
-			</tr>';
 		}
+		fclose($myfile);
 		?>
 	</table>
 </body>
