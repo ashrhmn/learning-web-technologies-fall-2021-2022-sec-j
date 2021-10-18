@@ -6,7 +6,11 @@ if (isset($_COOKIE['isLoggedIn'])) {
         <html>
 
         <body>
-            <h1>Homepage</h1>
+            <h1>Welcome <?php echo $_COOKIE['loggedInName'] ?></h1>
+            <a href="profile.php">Profile</a>
+            <a href="changePassword.php">Change Password</a>
+            <a href="viewUsers.php">View Users</a>
+
             <a href="handleLogout.php">Logout</a>
         </body>
 
