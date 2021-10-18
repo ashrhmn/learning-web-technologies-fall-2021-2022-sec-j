@@ -12,7 +12,8 @@ if (isset($_COOKIE['isLoggedIn'])) {
 
         </html>
 
-<?php } else { //header('location: login.php');}}
+<?php } else {
+        header('location: login.php');
     }
 } else {
     header('location: login.php');
