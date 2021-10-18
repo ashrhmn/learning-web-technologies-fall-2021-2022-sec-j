@@ -8,5 +8,7 @@
             header('location: login.php');
         }
     }
-    header('location: login.php')
+    else{
+        header('location: login.php');
+    }
 ?>
