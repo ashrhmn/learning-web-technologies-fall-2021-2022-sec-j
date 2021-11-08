@@ -14,7 +14,7 @@ function getProductsTable()
 
 function addProduct($product)
 {
-	if (isPreparedStatementExecuted("insert into product(name,buyingPrice,sellingPrice,displayable) values(?,?,?,?)", 'sdds', $product['name'], $product['buyingPrice'], $product['sellingPrice'], $product['displayable'])) {
+	if (isPreparedStatementExecuted("insert into products (name,buyingPrice,sellingPrice,displayable) values(?,?,?,?)", 'sdds', $product['name'], $product['buyingPrice'], $product['sellingPrice'], $product['displayable'])) {
 		return true;
 	}
 	return false;

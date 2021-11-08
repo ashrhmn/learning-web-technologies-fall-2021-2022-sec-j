@@ -6,8 +6,19 @@ error_reporting(E_ALL);
 require_once('../model/productModel.php');
 
 $products = getProductsTable();
+?>
+<a href="addPage.php">Add New</a>
+<form action="#" method="POST">
+	<input type="text" name="queryBox">
+	<input type="submit" name="filter" value="Filter">
+</form>
+<br>
+<?php
 
-print_r($products);
+if (isset($_POST['filter'])) {
+	$queryText = $_POST['queryBox'];
+	$products = getFilteredProductsTable($queryText);
+}
 
 if (count($products) == 0) {
 	echo 'No Products to show';
@@ -15,7 +26,6 @@ if (count($products) == 0) {
 }
 
 ?>
-
 <table>
 	<tr>
 		<th>Name</th>

@@ -68,14 +68,6 @@ function preparedQueryToAssocArray($sql, $types, ...$args)
 	return $result->fetch_all(MYSQLI_ASSOC);
 }
 
-function dataExistsOnPreparedQuery($sql, $types, ...$args)
-{
-	$res_array = preparedQueryToAssocArray($sql, $types, ...$args);
-	if (count($res_array) > 0) {
-		return true;
-	}
-	return false;
-}
 
 function query($sql)
 {
