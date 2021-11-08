@@ -32,7 +32,7 @@ if (count($products) == 0) {
 				<td><?= $products[$i]['profit'] ?></td>
 				<td>
 					<a href="editPage.php?id=<?= $products[$i]['id'] ?>">Edit</a>
-					<a href="../controller/deleteProduct.php">Delete</a>
+					<a href="../controller/deleteHandler.php?id=<?= $products[$i]['id'] ?>">Delete</a>
 				</td>
 			</tr>
 	<?php

@@ -14,7 +14,7 @@ function getProductsTable()
 
 function addProduct($product)
 {
-	if (isPreparedStatementExecuted("insert into product(name,buyingPrice,sellingPrice,displayable) values(?,?,?,?)", 'sffs', $product['name'], $product['buyingPrice'], $product['sellingPrice'], $product['displayable'])) {
+	if (isPreparedStatementExecuted("insert into product(name,buyingPrice,sellingPrice,displayable) values(?,?,?,?)", 'sdds', $product['name'], $product['buyingPrice'], $product['sellingPrice'], $product['displayable'])) {
 		return true;
 	}
 	return false;
@@ -23,7 +23,7 @@ function addProduct($product)
 function editProduct($product)
 {
 
-	if (isPreparedStatementExecuted("update products set name=?, buyingPrice=?, sellingPrice=?, displayable=? where id=?", 'sffsi', $product['name'], $product['buyingPrice'], $product['sellingPrice'], $product['displayable'], $product['id'])) {
+	if (isPreparedStatementExecuted("update products set name=?, buyingPrice=?, sellingPrice=?, displayable=? where id=?", 'sddsi', $product['name'], $product['buyingPrice'], $product['sellingPrice'], $product['displayable'], $product['id'])) {
 		return true;
 	}
 	return false;
@@ -53,4 +53,4 @@ function getFilteredProductsTable($query)
 }
 
 $rows = getProductsTable();
-print_r($rows);
+//print_r($rows);
