@@ -21,15 +21,19 @@ function stringContainsOnly(str, ascii, chars = []) {
 
 function submitName() {
   inp = document.getElementsByTagName("input")[0].value;
+  inp = inp.trim();
   console.log(inp);
 
   errors = [];
+
+  if (!inp.includes(" ")) {
+    errors.push("Does not contain two word");
+  }
 
   firstLetter = inp.toLowerCase().charCodeAt(0);
   if (firstLetter < 97 || firstLetter > 122) {
     errors.push("Name does not start with a letter");
   }
-  console.log(stringContainsOnly(inp, arrayOfNum(97, 122), [" ", ".", "-"]));
   if (!stringContainsOnly(inp, arrayOfNum(97, 122), [" ", ".", "-"])) {
     errors.push("Invalid Character");
   }
