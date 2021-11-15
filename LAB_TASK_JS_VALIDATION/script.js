@@ -52,3 +52,28 @@ function submitName() {
       "Submit Successfull";
   }
 }
+function submitEmail() {
+  inp = document.getElementsByTagName("input")[0].value;
+  inp = inp.trim();
+  console.log(inp);
+
+  errors = [];
+
+  if (inp == "") {
+    errors.push("Email is empty");
+  }
+
+  if (errors.length > 0) {
+    console.log("Has error");
+    errorStr = "Errors: \n";
+
+    errors.forEach((error) => (errorStr += error + "\n"));
+
+    console.log(errorStr);
+
+    errorElement = document.getElementsByTagName("p")[0].innerText = errorStr;
+  } else {
+    errorElement = document.getElementsByTagName("p")[0].innerText =
+      "Submit Successfull";
+  }
+}
