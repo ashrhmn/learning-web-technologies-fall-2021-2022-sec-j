@@ -15,25 +15,66 @@ function btn(key) {
     }
   } else {
     if (key == "+" || key == "-" || key == "*" || key == "/" || key == "=") {
-      if (resultElement.innerHTML != "0") {
-        switch (key) {
-          case "+":
-            resultPrevElement.innerHTML =
-              Number(resultPrevElement.innerHTML) +
-              Number(resultElement.innerHTML);
-          case "-":
-            resultPrevElement.innerHTML =
-              Number(resultPrevElement.innerHTML) +
-              Number(resultElement.innerHTML);
-          case "*":
-            resultPrevElement.innerHTML =
-              Number(resultPrevElement.innerHTML) +
-              Number(resultElement.innerHTML);
-          case "/":
-            resultPrevElement.innerHTML =
-              Number(resultPrevElement.innerHTML) +
-              Number(resultElement.innerHTML);
-        }
+      switch (operatorElement.innerHTML) {
+        case "+" || "=":
+          resultPrevElement.innerHTML =
+            Number(resultPrevElement.innerHTML) +
+            Number(resultElement.innerHTML);
+          resultElement.innerHTML = 0;
+          if (!key == "=") {
+            operatorElement.innerHTML = key;
+          } else {
+            resultElement.innerHTML = resultPrevElement.innerHTML;
+            operatorElement.innerHTML = "";
+            resultPrevElement.innerHTML = "";
+          }
+          break;
+        case "-":
+          resultPrevElement.innerHTML =
+            Number(resultPrevElement.innerHTML) -
+            Number(resultElement.innerHTML);
+          resultElement.innerHTML = 0;
+          if (!key == "=") {
+            operatorElement.innerHTML = key;
+          } else {
+            resultElement.innerHTML = resultPrevElement.innerHTML;
+            operatorElement.innerHTML = "";
+            resultPrevElement.innerHTML = "";
+          }
+          break;
+        case "*":
+          resultPrevElement.innerHTML =
+            Number(resultPrevElement.innerHTML) *
+            Number(resultElement.innerHTML);
+          resultElement.innerHTML = 0;
+          if (!key == "=") {
+            operatorElement.innerHTML = key;
+          } else {
+            resultElement.innerHTML = resultPrevElement.innerHTML;
+            operatorElement.innerHTML = "";
+            resultPrevElement.innerHTML = "";
+          }
+          break;
+        case "/":
+          resultPrevElement.innerHTML =
+            Number(resultPrevElement.innerHTML) /
+            Number(resultElement.innerHTML);
+          resultElement.innerHTML = 0;
+          if (!key == "=") {
+            operatorElement.innerHTML = key;
+          } else {
+            resultElement.innerHTML = resultPrevElement.innerHTML;
+            operatorElement.innerHTML = "";
+            resultPrevElement.innerHTML = "";
+          }
+          break;
+        case "":
+          resultPrevElement.innerHTML = resultElement.innerHTML;
+          operatorElement.innerHTML = key;
+          resultElement.innerHTML = 0;
+          break;
+        case "=":
+          break;
       }
     }
   }
