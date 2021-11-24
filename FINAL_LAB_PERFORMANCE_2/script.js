@@ -17,44 +17,36 @@ function btn(key) {
     if (key == "+" || key == "-" || key == "*" || key == "/" || key == "=") {
       switch (operatorElement.innerHTML) {
         case "+":
-          resultPrevElement.innerHTML = getResult(
+          getResult(
             Number(resultPrevElement.innerHTML),
             Number(resultElement.innerHTML),
-            "+"
+            "add",
+            key
           );
-          resultElement.innerHTML = 0;
-          operatorElement.innerHTML = key;
-          hideElementsForEqual(key);
           break;
         case "-":
-          resultPrevElement.innerHTML = getResult(
+          getResult(
             Number(resultPrevElement.innerHTML),
             Number(resultElement.innerHTML),
-            "-"
+            "sub",
+            key
           );
-          resultElement.innerHTML = 0;
-          operatorElement.innerHTML = key;
-          hideElementsForEqual(key);
           break;
         case "*":
-          resultPrevElement.innerHTML = getResult(
+          getResult(
             Number(resultPrevElement.innerHTML),
             Number(resultElement.innerHTML),
-            "*"
+            "mul",
+            key
           );
-          resultElement.innerHTML = 0;
-          operatorElement.innerHTML = key;
-          hideElementsForEqual(key);
           break;
         case "/":
-          resultPrevElement.innerHTML = getResult(
+          getResult(
             Number(resultPrevElement.innerHTML),
             Number(resultElement.innerHTML),
-            "/"
+            "div",
+            key
           );
-          resultElement.innerHTML = 0;
-          operatorElement.innerHTML = key;
-          hideElementsForEqual(key);
           break;
         case "":
           resultPrevElement.innerHTML = resultElement.innerHTML;
@@ -62,7 +54,10 @@ function btn(key) {
           resultElement.innerHTML = 0;
           break;
         case "=":
-          resultElement.innerHTML = resultPrevElement.innerHTML;
+          //resultElement.innerHTML = resultPrevElement.innerHTML;
+          resultPrevElement.innerHTML = resultElement.innerHTML;
+          operatorElement.innerHTML = key;
+          resultElement.innerHTML = "0";
           break;
       }
     } else {
@@ -99,17 +94,22 @@ function hideElementsForEqual(key) {
   }
 }
 
-function getResult(num1, num2, operator) {
+function getResult(num1, num2, operator, key) {
   let xhttp = new XMLHttpRequest();
 
   xhttp.open("POST", "jsGotNoOperators.php", true);
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  xhttp.send("num1=" + num1 + "&&num2=" + num2 + "operator=" + operator);
+  xhttp.send("num1=" + num1 + "&&num2=" + num2 + "&&operator=" + operator);
 
   xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
       //document.getElementById('h1').innerHTML = this.responseText;
-      return this.responseText;
+      //console.log(this.responseText);
+      //return this.responseText;
+      resultPrevElement.innerHTML = this.responseText;
+      resultElement.innerHTML = 0;
+      operatorElement.innerHTML = key;
+      hideElementsForEqual(key);
     }
   };
 }
