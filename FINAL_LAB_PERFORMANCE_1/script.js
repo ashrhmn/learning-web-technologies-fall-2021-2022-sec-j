@@ -54,7 +54,9 @@ function btn(key) {
           resultElement.innerHTML = 0;
           break;
         case "=":
-          resultElement.innerHTML = resultPrevElement.innerHTML;
+          resultPrevElement.innerHTML = resultElement.innerHTML;
+          operatorElement.innerHTML = key;
+          resultElement.innerHTML = "0";
           break;
       }
     } else {
