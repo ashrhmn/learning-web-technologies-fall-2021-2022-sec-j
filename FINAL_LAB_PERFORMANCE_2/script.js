@@ -17,33 +17,41 @@ function btn(key) {
     if (key == "+" || key == "-" || key == "*" || key == "/" || key == "=") {
       switch (operatorElement.innerHTML) {
         case "+":
-          resultPrevElement.innerHTML =
-            Number(resultPrevElement.innerHTML) +
-            Number(resultElement.innerHTML);
+          resultPrevElement.innerHTML = getResult(
+            Number(resultPrevElement.innerHTML),
+            Number(resultElement.innerHTML),
+            "+"
+          );
           resultElement.innerHTML = 0;
           operatorElement.innerHTML = key;
           hideElementsForEqual(key);
           break;
         case "-":
-          resultPrevElement.innerHTML =
-            Number(resultPrevElement.innerHTML) -
-            Number(resultElement.innerHTML);
+          resultPrevElement.innerHTML = getResult(
+            Number(resultPrevElement.innerHTML),
+            Number(resultElement.innerHTML),
+            "-"
+          );
           resultElement.innerHTML = 0;
           operatorElement.innerHTML = key;
           hideElementsForEqual(key);
           break;
         case "*":
-          resultPrevElement.innerHTML =
-            Number(resultPrevElement.innerHTML) *
-            Number(resultElement.innerHTML);
+          resultPrevElement.innerHTML = getResult(
+            Number(resultPrevElement.innerHTML),
+            Number(resultElement.innerHTML),
+            "*"
+          );
           resultElement.innerHTML = 0;
           operatorElement.innerHTML = key;
           hideElementsForEqual(key);
           break;
         case "/":
-          resultPrevElement.innerHTML =
-            Number(resultPrevElement.innerHTML) /
-            Number(resultElement.innerHTML);
+          resultPrevElement.innerHTML = getResult(
+            Number(resultPrevElement.innerHTML),
+            Number(resultElement.innerHTML),
+            "/"
+          );
           resultElement.innerHTML = 0;
           operatorElement.innerHTML = key;
           hideElementsForEqual(key);
@@ -89,4 +97,19 @@ function hideElementsForEqual(key) {
     resultPrevElement.innerHTML = "";
     operatorElement.innerHTML = "=";
   }
+}
+
+function getResult(num1, num2, operator) {
+  let xhttp = new XMLHttpRequest();
+
+  xhttp.open("POST", "jsGotNoOperators.php", true);
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp.send("num1=" + num1 + "&&num2=" + num2 + "operator=" + operator);
+
+  xhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      //document.getElementById('h1').innerHTML = this.responseText;
+      return this.responseText;
+    }
+  };
 }
