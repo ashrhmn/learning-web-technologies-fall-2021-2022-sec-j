@@ -5,8 +5,16 @@ $("#submit").click(() => {
   let email = $("#email").val();
   let gender = $("input[name='gender']:checked").val();
   let date = new Date($("#date").val());
+  let bloodgroup = $("#bloodgroup").find(":selected").text();
 
-  console.log(date.getFullYear());
+  var selected = [];
+  $("#degree")
+    .find(":selected")
+    .each(function () {
+      selected.push($(this).attr("value"));
+    });
+
+  console.log(selected);
 
   if (name.length < 5) {
     $("#nameError").html("Name is not 5 char long");
