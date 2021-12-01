@@ -7,15 +7,9 @@ $("#submit").click(() => {
   let date = new Date($("#date").val());
   let bloodgroup = $("#bloodgroup").find(":selected").text();
 
-  var selected = [];
-  $("#degree")
-    .find(":selected")
-    .each(function () {
-      selected.push($(this).attr("value"));
-    });
+  selectedDegrees = ['ssc', 'hsc', 'bsc', 'msc'].filter(degree => $(`#${degree}`).is(':checked'))
 
-  console.log(selected);
-
+  
   if (name.length < 5) {
     $("#nameError").html("Name is not 5 char long");
     hasError = true;
