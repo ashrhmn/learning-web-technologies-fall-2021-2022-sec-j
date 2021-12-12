@@ -1,28 +1,29 @@
 <?php
-	session_start();
+session_start();
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+if (isset($_POST['submit'])) {
+	if ($_POST['username'] != "") {
+		if ($_POST['password'] != "") {
+			if ($_POST['email'] != "") {
 
-	if(isset($_POST['submit'])){
-		if($_POST['username'] != ""){
-			if($_POST['password'] != ""){
-				if($_POST['email'] != ""){
+				$myfile = fopen('user.txt', 'a');
+				$user = $_POST['username'] . "|" . $_POST['password'] . "|" . $_POST['email'] . "\r\n";
 
-					$myfile = fopen('user.txt', 'a');
-					$user = $_POST['username']."|".$_POST['password']."|".$_POST['email']."\r\n";
+				fwrite($myfile, $user);
+				fclose($myfile);
 
-					fwrite($myfile, $user);
-					fclose($myfile);
+				echo $user;
 
-					echo $user;
-
-					header('location: login.html');
-				}else{
-					echo "Invalid email...";
-				}	
-			}else{
-				echo "Invalid password...";
+				header('location: login.html');
+			} else {
+				echo "Invalid email...";
 			}
-		}else{
-			echo "Invalid username...";
+		} else {
+			echo "Invalid password...";
 		}
+	} else {
+		echo "Invalid username...";
 	}
-?>
+}
